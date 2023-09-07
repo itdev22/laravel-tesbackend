@@ -30,7 +30,6 @@ class tesController extends Controller
         $net_untuk_resto = $data['harga_sebelum_markup'] + ($data['harga_sebelum_markup'] * $data['markup_persen'] / 100);
 
         $result = array(
-            "harga_sebelum_markup" => $data['harga_sebelum_markup'],
             "net_untuk_resto" => $net_untuk_resto,
             "share_untuk_ojol" => $net_untuk_resto * $data['share_persen'] / 100
         );
