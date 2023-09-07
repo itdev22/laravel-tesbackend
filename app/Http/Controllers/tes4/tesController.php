@@ -25,9 +25,11 @@ class tesController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->json()->all();
+
         $result = array(
-            "net_sales" => $request->total,
-            "pajak_rp" =>  $request->total * $request->persen_pajak  / 100
+            "net_sales" => $data['total'],
+            "pajak_rp" =>  $data['total'] * $data['persen_pajak']  / 100
         );
 
         return response()->json($result);

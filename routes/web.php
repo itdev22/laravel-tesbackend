@@ -19,13 +19,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::prefix('tes4')->name('tes4.')->group(function () {
-    Route::get('/', [tesController::class, 'index'])->name('index');
-    Route::post('/', [tesController::class, 'store'])->name('store');
-});
-
-Route::prefix('tes6')->name('tes6.')->group(function () {
-    Route::get('/', [Tes6TesController::class, 'index'])->name('index');
-    Route::post('/', [Tes6TesController::class, 'store'])->name('store');
-});

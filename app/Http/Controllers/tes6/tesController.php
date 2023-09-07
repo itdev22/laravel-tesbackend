@@ -25,12 +25,14 @@ class tesController extends Controller
      */
     public function store(Request $request)
     {
-        $net_untuk_resto = $request->harga_sebelum_markup + ($request->harga_sebelum_markup * $request->markup_persen / 100);
+        $data = $request->json()->all();
+
+        $net_untuk_resto = $data['harga_sebelum_markup'] + ($data['harga_sebelum_markup'] * $data['markup_persen'] / 100);
 
         $result = array(
-            "harga_sebelum_markup" => $request->harga_sebelum_markup,
+            "harga_sebelum_markup" => $data['harga_sebelum_markup'],
             "net_untuk_resto" => $net_untuk_resto,
-            "share_untuk_ojol" => $net_untuk_resto * $request->share_persen / 100
+            "share_untuk_ojol" => $net_untuk_resto * $data['share_persen'] / 100
         );
         return response()->json($result);
     }
