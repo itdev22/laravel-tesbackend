@@ -25,11 +25,6 @@ Route::prefix('tes4')->name('tes4.')->group(function () {
     Route::post('/', [tesController::class, 'store'])->name('store');
 });
 
-Route::prefix('tes5')->name('tes5.')->group(function () {
-    Route::get('/', [Tes5TesController::class, 'index'])->name('index');
-    Route::post('/', [Tes5TesController::class, 'store'])->name('store');
-});
-
 Route::prefix('tes6')->name('tes6.')->group(function () {
     Route::get('/', [Tes6TesController::class, 'index'])->name('index');
     Route::post('/', [Tes6TesController::class, 'store'])->name('store');
